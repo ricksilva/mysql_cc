@@ -1,6 +1,6 @@
 ## MySQL Crash Course
 
-MySQL Crash Course** by Rick Silva
+MySQL Crash Course by Rick Silva
 
 ### Chapter 5: Joining Database Tables
 
