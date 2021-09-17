@@ -475,7 +475,7 @@ values
 ('Tren Urbano',                     'San Juan',         'US'),
 ('Tashkent Metro',                  'Tashkent',         'UZ');
 
--- Copy the country table to the location database to prepare for a query that select from multiple databases.
+-- Copy the country table to the location database to prepare for a query that selects from multiple databases.
 create database if not exists location;
 use location;
 create table location.country as select * from subway.country;
