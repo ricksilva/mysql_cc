@@ -2,23 +2,24 @@ create database if not exists land;
 
 use land;
 
-drop table if exists continent;
+-- THE SQL TO CREATE THIS TABLE IS IN CHAPTER_2_EXAMPLES.SQL - WE DON'T NEED ANY DATA IN THE TABLE FOR CHAPTER 2
+-- drop table if exists continent;
 
-create table continent
-(
-	continent_id	tinyint		not null	auto_increment,
-	continent_name	varchar(20),
-	population		bigint,
-	primary key (continent_id)
-);
+-- create table continent
+-- (
+-- 	continent_id	tinyint		not null	auto_increment,
+--	continent_name	varchar(20),
+--	population		bigint,
+--	primary key (continent_id)
+-- );
 
-insert into continent (continent_name, population) values ('Asia', 4641054775);
-insert into continent (continent_name, population) values ('Africa', 1340598147);
-insert into continent (continent_name, population) values ('Europe', 747636026);
-insert into continent (continent_name, population) values ('North America', 592072212);
-insert into continent (continent_name, population) values ('South America', 430759766);
-insert into continent (continent_name, population) values ('Australia', 43111704);
-insert into continent (continent_name, population) values ('Antarctica', 0);
+-- insert into continent (continent_name, population) values ('Asia', 4641054775);
+-- insert into continent (continent_name, population) values ('Africa', 1340598147);
+-- insert into continent (continent_name, population) values ('Europe', 747636026);
+-- insert into continent (continent_name, population) values ('North America', 592072212);
+-- insert into continent (continent_name, population) values ('South America', 430759766);
+-- insert into continent (continent_name, population) values ('Australia', 43111704);
+-- insert into continent (continent_name, population) values ('Antarctica', 0);
 
 create table high_temperature
 	(

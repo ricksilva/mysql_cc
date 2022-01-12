@@ -6,6 +6,12 @@ create database finance;
 
 create database music;
 
+drop database circus;
+
+drop database finance;
+
+drop database music;
+
 use land;
 
 create table continent 
@@ -33,7 +39,6 @@ create table high_temperature
     constraint check (high_temperature < 200),
     primary key (city, year)
 );
-
 
 create table customer
 (
