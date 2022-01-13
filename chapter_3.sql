@@ -7,7 +7,7 @@
 -- (like MySQL Workbench) and run them in your own MySQL environment.
 --
 
--- The land database and the continent table creation are in the last chapter's script: chapter_2.sql
+-- The land database and the continent table were created in the last chapter's script: chapter_2.sql
 use land;
 
 -- Selecting 3 columns from the continent table
@@ -32,14 +32,14 @@ where  continent_name   = 'Asia';
 select continent_id,
        continent_name,
        population
-from   continent;
+from   continent
 order by continent_name;
 
 -- Ordering rows by population in descending order
 select continent_id,
        continent_name,
        population
-from   continent;
+from   continent
 order by population desc;
 
 -- Using the wildcard *
@@ -58,8 +58,14 @@ SELECT continent_id,
        population
 FROM   continent;
 
-use XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX;
 
+use pet;
+
+-- Drop the table (if it exists) before recreating it
+drop table if exists dog;
+
+-- This table depends on the owner, breed, and veterinarian tables existing first.
+-- If you did not create those tables, you can find the SQL in chapter_2.sql
 CREATE TABLE dog
 (
     dog_id            int,
@@ -73,13 +79,17 @@ CREATE TABLE dog
     FOREIGN KEY (veterinarian_id) REFERENCES veterinarian(veterinarian_id)
 );
 
+
+-- Switch back to the "land" database
+use land;
+
 -- Backticks
 select `continent_id`,
        `continent_name`,
        `population`
 from   `continent`;
 
--- Comments in SQL (like this one!):
+-- The next 3 SQL statements show comments in SQL:
 
 -- This SQL statement shows the highest-populated continents at the top
 select continent_id,
@@ -101,30 +111,6 @@ The population of each continent is updated in this table yearly.
 select * from continent;
 
 
-
-
-
-
-create database election;
-
-use election;
-
-create table vote (
-district	int,
-precinct	int,
-vote 		int
-);
-
-insert into vote (district, precinct, vote) values
-    (1,         1,      14264),
-    (1,         2,        547),
-    (1,         3,       8756),
-    (2,         1,         78),
-    (2,         2,        366),
-    (2,         3,        875);
-    
-select * from vote;
-
 create database employment;
 
 use employment;
@@ -141,55 +127,39 @@ values
 (2, 137455),
 (3, null);
 
+select * 
+from   unemployed
+where  unemployed is null;
 
-use music;
-
-create table genre_stream
-(
-genre	varchar(50),
-stream	int
-);
-
-insert into genre_stream (genre, stream) values
-('Hip Hop', 3102456),
-('Rock', 1577569),
-('Pop', 1298756),
-('Country', 764789),
-('Latin',601758),
-('Dance', 308745);
-
-create database vacation; 
-
-use vacation;
-
-create table theme_park
-(
-	country	varchar(50),
-	state	varchar(50),
-	city	varchar(50),
-	park	varchar(100)
-);
-
-insert into theme_park (country, state, city, park)
-values 
-('USA',			'Florida',			'Orlando',				'Disney World'),
-('USA',			'Florida',			'Orlando',				'Universal Studios'),
-('USA',			'Florida',			'Orlando',				'SeaWorld'),
-('USA',			'Florida',			'Tampa',				'Busch Gardens'),
-('Brazil',		'Santa Catarina',	'Balneario Camboriu',	'Unipraias Park'),
-('Brazil',		'Santa Catarina',	'Florianopolis',		'Show Water Park');
-
-select	country,
-		state,
-		count(*)
-from	theme_park
-group by country, state;
-
-
+select * 
+from   unemployed
+where  unemployed is not null;
 
 --
 -- Try It Yourself Exercises:
 --
+
+-- Make sure the customer table is loaded for the Try It Yourself exercises:
+use feedback;
+
+-- Drop any old versions of this table (if they exist) before recreating the table
+drop table if exists customer;
+
+create table customer
+(
+    customer_id     int,
+    first_name	    varchar(50),
+    last_name       varchar(50),
+    address         varchar(100),
+    primary key (customer_id)
+); 
+
+-- Load the customer table with data:
+insert into customer (customer_id, first_name, last_name, address)
+values
+(1, 'Bob', 'Smith', '12 Dreary Lane'),
+(2, 'Sally', 'Jones', '76 Boulevard Meugler'),
+(3, 'Karen', 'Bellyacher', '354 Main Street');
 
 -- Exercise 3-1: Select first and last name from the customer table
 use feedback;
@@ -204,23 +174,3 @@ select	customer_id,
 		last_name
 from	customer
 where	first_name = 'Karen';
-
--- Exercise 3-3: How many rows are in the genre_stream table?
-use music;
-
-select count(*) from genre_stream;
-
--- Exercise 3-4: Select all columns from the genre_stream table ordered by the stream column in descending order
-select	*
-from	genre_stream
-order by stream desc;
-
--- Exercise 3-5: Find the average number of streams for all genres
-select	avg(stream)
-from	genre_stream;
-
--- Exercise 3-6: Show the number of parks per country
-select	country,
-		count(*)
-from	theme_park
-group by country;

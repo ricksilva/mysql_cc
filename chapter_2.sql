@@ -69,7 +69,9 @@ values
 -- In this version we have check constraints for the year and high_temperature columns.
 -- To create this new version of the table, we drop the old table, recreate the table, 
 -- and reinsert the data.
-drop table high_temperature;
+
+-- Drop the old version of the table (if one exists)
+drop table if exists high_temperature;
 
 create table high_temperature
 (
@@ -136,7 +138,7 @@ alter table customer add column zip varchar(50);
 alter table customer drop column address;
 alter table customer rename column zip to zip_code;
 alter table customer rename to valued_customer;
-	
+
 create table contact
 (
     contact_id     int,
@@ -147,7 +149,7 @@ create table contact
     primary key(contact_id)
 );
 
--- Note that null does not have quotes around it:
+-- Note that for contact 3, null does not have quotes around it:
 insert into contact values
 (1, 'Steve Chen',	'Beijing',	'123-3123',	'steve@schen21.org'),
 (2, 'Joan Field',	'New York',	'321-4321',	'jfield@jfny99.com'),
@@ -173,12 +175,14 @@ create index product_supplier_index on product(supplier_id);
 
 drop table product;
 
-
 create database pet;
 
 -- Don't forget to run the USE command so that the tables below will be 
 -- created in the "pet" database
 use pet;
+
+-- Drop any old versions of this table before recreating it.
+drop table if exists dog;
 
 create table dog
 (
