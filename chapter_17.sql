@@ -1,0 +1,8 @@
+-- 
+-- MySQL Crash Course
+-- 
+-- Chapter 17 – Using Triggers to Track Changes to Voter Data						
+--
+-- You can copy and paste any of these commands into your favorite MySQL tool
+-- (like MySQL Workbench) and run them in your own MySQL environment.
+--

@@ -1,0 +1,8 @@
+-- 
+-- MySQL Crash Course
+-- 
+-- Chapter 8 – Calling Built-In MySQL Functions						
+--
+-- You can copy and paste any of these commands into your favorite MySQL tool
+-- (like MySQL Workbench) and run them in your own MySQL environment.
+--

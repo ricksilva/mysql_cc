@@ -1,0 +1,8 @@
+-- 
+-- MySQL Crash Course
+-- 
+-- Chapter 6 – Complex Joins with Multiple Tables						
+--
+-- You can copy and paste any of these commands into your favorite MySQL tool
+-- (like MySQL Workbench) and run them in your own MySQL environment.
+--

@@ -1,0 +1,8 @@
+-- 
+-- MySQL Crash Course
+-- 
+-- Chapter 9 – Inserting, Updating, and Deleting Data						
+--
+-- You can copy and paste any of these commands into your favorite MySQL tool
+-- (like MySQL Workbench) and run them in your own MySQL environment.
+--
