@@ -111,6 +111,46 @@ create table book
     entire_book        mediumtext
     );
 
+create table store
+	(
+	store_name	varchar(100)
+	);
+	
+insert into store
+	(
+	store_name
+	)
+values
+	('Town Supply'),
+	("Bill's Supply");
+
+-- Strings with single quotes
+select  * 
+from    store 
+where   store_name = 'Town Supply';
+
+-- Strings with double quotes
+select  *
+from    store
+where   store_name = "Town Supply";
+
+-- This SQL causes an error because the single quote is the same character as the apostrophe.
+-- I commented it out so it won't prevent the next SQL statements from running in your MySQL Workbench environment.
+-- select  *
+-- from    store
+-- where   store_name = 'Bill's Supply';
+
+-- Using double quotes here clears up the problem
+select  *
+from    store 
+where   store_name = "Bill's Supply";
+
+-- Or you can use single quotes and escape the apostrophe
+select  *
+from    store
+where   store_name = 'Bill\'s Supply';
+
+
 create table encryption
     (
     key_id          int,
