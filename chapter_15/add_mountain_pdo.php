@@ -12,12 +12,12 @@ $new_height = 28252;
 
 $stmt = $conn->prepare(
     'insert into mountain (mountain_name, location, height)
-     values (?, ?, ?)'
+     values (:mountain, :location, :height)'
 );
 
-$stmt->bindParam(1, $new_mountain, PDO::PARAM_STR);
-$stmt->bindParam(2, $new_location, PDO::PARAM_STR);
-$stmt->bindParam(3, $new_height,   PDO::PARAM_INT);
+$stmt->bindParam(':mountain', $new_mountain, PDO::PARAM_STR);
+$stmt->bindParam(':location', $new_location, PDO::PARAM_STR);
+$stmt->bindParam(':height', $new_height,   PDO::PARAM_INT);
 
 $stmt->execute();
 

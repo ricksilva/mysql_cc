@@ -1,16 +1,12 @@
 import java.sql.*;
 
-/* To run this program, rename it to Mountain.java and run these commands at the command line:
-       javac Mountain.java (This will fail because the try/catch has been commented out)
-       java Mountain
-*/
-public class Mountain {
+public class MountainAsia {
   public static void main(String args[]) {
     String url = "jdbc:mysql://localhost:3306/topography";
     String username = "top_app";
     String password = "pQ3fgR5u5";
 	
-//    try {
+    try {
       Class.forName("com.mysql.cj.jdbc.Driver");
       Connection conn = DriverManager.getConnection(url, username, password);
       String sql = "call p_get_mountain_by_loc(?)";
@@ -23,11 +19,8 @@ public class Mountain {
           rs.getInt("height")
         );
       }	  
-//    } catch (Exception ex) {
-//      System.out.println(ex);
-//    }
+    } catch (Exception ex) {
+      System.out.println(ex);
+    }
   }
 }
-
-
-

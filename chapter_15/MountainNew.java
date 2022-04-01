@@ -1,10 +1,6 @@
 import java.sql.*;
 
-/* To run this program, rename it to Mountain.java and run these commands at the command line:
-       javac Mountain.java
-       java Mountain
-*/
-public class Mountain {
+public class MountainNew {
   public static void main(String args[]) {
     String url = "jdbc:mysql://localhost/topography";
     String username = "top_app";
