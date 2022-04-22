@@ -202,6 +202,12 @@ delimiter ;
 -- Call the p_set_and_show_state_population() procedure
 call p_set_and_show_state_population('New York');
 
+-- Show all procedures and functions in the population database
+select routine_type,
+       routine_name
+from   information_schema.routines
+where  routine_schema='population';
+
 -- Create the weird_math database and the f_math_trick() function
 create database weird_math;
 
@@ -419,9 +425,9 @@ delimiter //
 
 create procedure p_split_big_ny_counties()
 begin
-  declare  in   v_state       varchar(100);
-  declare  in   v_county      varchar(100);
-  declare  in   v_population  int;
+  declare  v_state       varchar(100);
+  declare  v_county      varchar(100);
+  declare  v_population  int;
 
   declare done bool default false;
   
