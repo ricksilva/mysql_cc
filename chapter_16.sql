@@ -49,3 +49,7 @@ create table current_weather_load
 drop table if exists current_weather;
 
 create table current_weather like current_weather_load;
+
+-- Create a "trucking" user with the password "Roger".
+create user trucking@localhost identified by 'Roger';
+grant all privileges on weather.* to trucking@localhost;
