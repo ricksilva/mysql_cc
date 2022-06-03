@@ -42,7 +42,7 @@ Chapter 18 – Using Views to Hide Salary Data
 
 Afterword	
 
-## Here you will find one SQL script for each chapter called chapter_XX.sql (where XX is the chapter number). The script contains:
+## Here you will find one SQL script for each chapter called chapter_X.sql (where X is the chapter number). The script contains:
 * Any set up commands that need to be run before the examples and exercises.
 * The example SQL statements used in each chapter of the book.
 * Answers to the "Try It Yourself" exercises in each chapter of the book.
