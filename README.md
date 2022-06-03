@@ -53,6 +53,6 @@ Copy and paste the commands you are interested in from the script and run them a
 
 Rick Silva
 
-Email: silva.rick@gmail.com
+Email: rick@rick-silva.com
 
 Twitter: @rick_silva
