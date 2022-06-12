@@ -7,8 +7,9 @@
 -- (like MySQL Workbench) and run them in your own MySQL environment.
 --
 -- To find answers to particular exercises, search through this file for the exercise number, like "17-5"
+-- Answers to exercises aren't all in lowest-to-highest order in this script.
 
--- Exercise 17-1 is to create these voting database and tables:
+-- Exercise 17-1 is to create the voting database and tables:
 drop database if exists voting;
 
 create database voting;
@@ -140,7 +141,7 @@ end//
 
 delimiter ;
 
--- Exercise 17-5 is to create this tr_ballot_ai trigger:
+-- Exercise 17-8
 drop trigger if exists tr_ballot_ai;
 
 delimiter //
@@ -170,8 +171,9 @@ begin
 end//
 
 delimiter ;
--- End of Exercise 17-5
+-- End of Exercise 17-8
 
+-- Exercise 17-9
 -- tr_race_ai
 drop trigger if exists tr_race_ai;
 
@@ -262,6 +264,7 @@ begin
 end//
 
 delimiter ;
+-- End of Exercise 17-9
 
 -- Create the after delete triggers
 -- tr_voter_ad
@@ -300,7 +303,7 @@ end//
 
 delimiter ;
 
--- Exercise 17-6:
+-- Exercise 17-10:
 -- tr_ballot_ad
 drop trigger if exists tr_ballot_ad;
 
@@ -331,8 +334,9 @@ begin
 end//
 
 delimiter ;
--- End of Exercise 17-6
+-- End of Exercise 17-10
 
+-- Exercise 17-11:
 -- tr_race_ad
 drop trigger if exists tr_race_ad;
 
@@ -423,6 +427,7 @@ begin
 end//
 
 delimiter ;
+-- End of Exercise 17-11
 
 -- Create the "after update" triggers
 -- tr_voter_au 
@@ -479,7 +484,7 @@ end//
 
 delimiter ;
 
--- Exercise 17-7: Create the tr_ballot_au trigger
+-- Exercise 17-12:
 -- tr_ballot_au 
 drop trigger if exists tr_ballot_au;
 
@@ -513,8 +518,9 @@ values (now(), user(), @change_msg);
 end//
 
 delimiter ;
--- End of Exercise 17-7
+-- End of Exercise 17-12
 
+-- Exercise 17-13:
 -- tr_race_au 
 drop trigger if exists tr_race_au;
 
@@ -608,6 +614,7 @@ values (now(), user(), @change_msg);
 end//
 
 delimiter ;
+-- End exercise 17-13
 
 -- Create the ballot_candidate before insert trigger tr_ballot_candidate_bi to prevent overvoting
 drop trigger if exists tr_ballot_candidate_bi;
@@ -761,6 +768,7 @@ end//
 
 delimiter ;
 
+-- Exercise 17-5
 -- Creating the tr_race_bi before insert trigger
 drop trigger if exists tr_race_bi;
 
@@ -795,6 +803,17 @@ end//
 
 delimiter ;
 
+-- To test these "before" triggers on the voter, candidate, and race tables, create a new user called secretary_of_state, like this:
+-- create user secretary_of_state@localhost identified by 'v0t3'; -- This creates the user's password as v0t3
+-- grant all privileges on *.* to secretary_of_state@localhost; -- granting superuser privs on everything is normally a bad idea, but we can do it just for this test.
+
+-- If you log into MySQL as the Secretary of State you can execute these 3 commands (uncomment the commands first)
+-- If you log into MySQL with another user ID, our triggers will prevent running the commands.
+
+-- insert into race (race_name, votes_allowed)
+-- values ('Dog Catcher', 1);
+-- End of Exercise 17-5
+
 -- Creating the tr_voter_bu before update trigger
 drop trigger if exists tr_voter_bu;
 
@@ -811,6 +830,7 @@ end//
 
 delimiter ;
 
+-- Exercise 17-6
 -- Creating the tr_candidate_bu before update trigger
 drop trigger if exists tr_candidate_bu;
 
@@ -842,6 +862,7 @@ begin
 end//
 
 delimiter ;
+-- Exercise 17-6
 
 -- Creating the tr_voter_bd before delete trigger
 drop trigger if exists tr_voter_bd;
@@ -859,6 +880,7 @@ end//
 
 delimiter ;
 
+-- Exercise 17-7
 -- Creating the tr_candidate_bd before delete trigger
 drop trigger if exists tr_candidate_bd;
 
@@ -890,16 +912,8 @@ begin
 end//
 
 delimiter ;
+-- End of exercise 17-7
 
--- To test these "before" triggers on the voter, candidate, and race tables, create a new user called secretary_of_state, like this:
--- create user secretary_of_state@localhost identified by 'v0t3'; -- This creates the user's password as v0t3
--- grant all privileges on *.* to secretary_of_state@localhost; -- granting superuser privs on everything is normally a bad idea, but we can do it just for this test.
-
--- If you log into MySQL as the Secretary of State you can execute these 3 commands (uncomment the commands first)
--- If you log into MySQL with another user ID, our triggers will prevent running the commands.
-
--- insert into race (race_name, votes_allowed)
--- values ('Dog Catcher', 1);
 
 -- update candidate
 -- set    candidate_name = 'Lisa Peacemoney'
