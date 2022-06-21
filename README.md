@@ -1,6 +1,6 @@
 ## MySQL Crash Course
 
-**MySQL Crash Course** by Rick Silva is a course in using MySQL for beginner and intermediate database developers. The book introduces you to the basics of MySQL development. MySQL development techniques are explained with an emphasis on using Structured Query Language (SQL). Learn to use and create MySQL databases, tables, functions, procedures, views, and triggers.
+[MySQL Crash Course](https://nostarch.com/mysql-crash-course) by Rick Silva is a course from [No Starch Press](http://www.nostarch.com) in using MySQL for beginner and intermediate database developers. The book introduces you to the basics of MySQL development techniques with an emphasis on using Structured Query Language (SQL). Learn to use and create MySQL databases, tables, functions, procedures, views, and triggers.
 
 Introduction
 
@@ -42,17 +42,15 @@ Chapter 18 – Using Views to Hide Salary Data
 
 Afterword	
 
-## Here you will find one SQL script for each chapter called chapter_X.sql (where X is the chapter number). The script contains:
+## Here you will find one SQL script for each chapter called chapter_X.sql (where X is the chapter number). The scripts contains:
 * Any set up commands that need to be run before the examples and exercises.
 * The example SQL statements used in each chapter of the book.
 * Answers to the "Try It Yourself" exercises in each chapter of the book.
 
-Copy and paste the commands you are interested in from the script and run them against your own database using your favorite MySQL graphical tool (like MySQL Workbench).
+Copy and paste the commands you are interested in from the script and run them against your own database using your favorite MySQL graphical tool (like MySQL Workbench). Or, alternatively, download all the scripts as one zip file to your computer.
 
 **Happy MySQLing!**
 
 Rick Silva
-
 Email: rick@rick-silva.com
-
 Twitter: @rick_silva
