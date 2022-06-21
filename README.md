@@ -53,4 +53,4 @@ Copy and paste the commands you are interested in from the script and run them a
 
 Rick Silva
 Email: rick@rick-silva.com
-Twitter: @rick_silva
+Twitter: [@rick_silva](https://twitter.com/rick_silva)
