@@ -354,30 +354,6 @@ select * from bachelor where employed_flag != true;
 select * from bachelor where employed_flag = 0;
 select * from bachelor where employed_flag != 1;
 
-create table accountant
-	(
-	accountant_name	varchar(100)
-	);
-	
-insert into accountant
-	(
-	accountant_name
-	)
-values
-	(
-	'Kathy "Kitty" McGillicuddy'
-	);
-
--- You can also escape double quotes within double quotes
-select  * 
-from    accountant 
-where   accountant_name = "Kathy \"Kitty\" McGillicuddy";
-
--- Or surround the string that contains double quotes with single quotes
-select  * 
-from    accountant 
-where   accountant_name = 'Kathy "Kitty" McGillicuddy';
-
 create table applicant
 	(
 	name					varchar(100),
