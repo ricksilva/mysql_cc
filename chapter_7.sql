@@ -93,13 +93,13 @@ values
 select  *
 from    job
 where   salary > 100000
-and     start_date > '2022-01-20';
+and     start_date > '2024-01-20';
 
 -- Greater than or equal to
 select  *
 from    job
 where   salary >= 100000
-and     start_date >= '2022-01-20';
+and     start_date >= '2024-01-20';
 
 create table team_schedule
 	(
