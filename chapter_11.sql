@@ -133,6 +133,33 @@ drop procedure if exists p_set_state_population;
 
 delimiter //
 
+
+drop function if exists f_get_world_population;
+
+-- f_get_world_population() with delimiters
+delimiter //
+create function f_get_world_population()
+returns bigint
+deterministic no sql
+begin
+  return(7978759141);
+end//
+
+delimiter ;
+
+drop function if exists f_get_world_population;
+
+-- f_get_world_population() without delimiters
+create function f_get_world_population()
+returns bigint
+deterministic no sql
+return(7978759141);
+
+
+
+select f_get_world_population();
+
+
 create procedure p_set_state_population(
     in state_param varchar(100)
 )
@@ -368,8 +395,8 @@ set @cnt = 0;
 repeat
   select 'Looping Again';
   set @cnt = @cnt + 1;
-  until @cnt = 10 
-    end repeat;
+until @cnt = 10 
+end repeat;
 end;
 //
 delimiter ;

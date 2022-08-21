@@ -54,7 +54,7 @@ create table complaint
     );
 
 insert into company values (1, 'Catywampas Cellular', 'Sam Shady', '784-785-1245');
-insert into company values (2, 'Wooden Nickle Bank', 'Oscar Opossum', '719-997-4545');
+insert into company values (2, 'Wooden Nickel Bank', 'Oscar Opossum', '719-997-4545');
 insert into company values (3, 'Pitiful Pawn Shop', 'Frank Fishy', '917-185-7911');
 
 insert into complaint  values (1, 1, "Phone doesn't work");

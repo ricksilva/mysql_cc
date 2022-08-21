@@ -363,23 +363,23 @@ insert into province (province_id, province_name, official_language) values (8, 
 insert into province (province_id, province_name, official_language) values (9, 'Quebec', 'French');
 insert into province (province_id, province_name, official_language) values (10, 'Saskatchewan', 'English');
 
-create table capitol_city
+create table capital_city
 	(
 	city_id		int,
 	city_name	varchar(100),
 	province_id	int
 	);
 
-insert into capitol_city (city_id, city_name, province_id) values (1, 'Toronto', 7);
-insert into capitol_city (city_id, city_name, province_id) values (2, 'Quebec City', 9);
-insert into capitol_city (city_id, city_name, province_id) values (3, 'Halifax', 5);
-insert into capitol_city (city_id, city_name, province_id) values (4, 'Fredericton', 4);
-insert into capitol_city (city_id, city_name, province_id) values (5, 'Winnipeg', 3);
-insert into capitol_city (city_id, city_name, province_id) values (6, 'Victoria', 2);
-insert into capitol_city (city_id, city_name, province_id) values (7, 'Charlottetown', 8);
-insert into capitol_city (city_id, city_name, province_id) values (8, 'Regina', 10);
-insert into capitol_city (city_id, city_name, province_id) values (9, 'Edmonton', 1);
-insert into capitol_city (city_id, city_name, province_id) values (10,'St. Johns', 5);
+insert into capital_city (city_id, city_name, province_id) values (1, 'Toronto', 7);
+insert into capital_city (city_id, city_name, province_id) values (2, 'Quebec City', 9);
+insert into capital_city (city_id, city_name, province_id) values (3, 'Halifax', 5);
+insert into capital_city (city_id, city_name, province_id) values (4, 'Fredericton', 4);
+insert into capital_city (city_id, city_name, province_id) values (5, 'Winnipeg', 3);
+insert into capital_city (city_id, city_name, province_id) values (6, 'Victoria', 2);
+insert into capital_city (city_id, city_name, province_id) values (7, 'Charlottetown', 8);
+insert into capital_city (city_id, city_name, province_id) values (8, 'Regina', 10);
+insert into capital_city (city_id, city_name, province_id) values (9, 'Edmonton', 1);
+insert into capital_city (city_id, city_name, province_id) values (10,'St. Johns', 5);
 	
 create table tourist_attraction
 	(
@@ -409,7 +409,7 @@ select a.attraction_name,
        c.city_name,
        p.province_name
 from   tourist_attraction a
-join   capitol_city c
+join   capital_city c
   on   c.city_id = a.attraction_city_id
  and   a.open_flag is true
 join   province p
@@ -428,7 +428,7 @@ as
 select    a.attraction_name,
           c.city_name
 from      open_tourist_attraction a
-join      capitol_city c 
+join      capital_city c 
   on      c.city_id = a.attraction_city_id
  and      c.city_name = 'Toronto';
  
