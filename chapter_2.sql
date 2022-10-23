@@ -182,6 +182,37 @@ create database pet;
 use pet;
 
 -- Drop any old versions of this table before recreating it.
+drop table if exists owner;
+
+create table owner
+(
+	owner_id		int,
+	owner_name		varchar(100),
+	owner_address	varchar(100),
+	primary key (owner_id)
+);
+
+drop table if exists breed;
+
+create table breed
+(
+	breed_id	int,
+	breed_name	varchar(50),
+	temperament	varchar(100),
+	primary key (breed_id)
+);
+	
+drop table if exists veterinarian;
+
+create table veterinarian
+(
+	veterinarian_id			int,
+	veterinarian_name		varchar(100),
+	veterinarian_address	varchar(100),
+	veterinarian_phone		varchar(100),
+	primary key (veterinarian_id)
+);
+
 drop table if exists dog;
 
 create table dog
@@ -198,8 +229,6 @@ create table dog
 );
 
 show indexes from dog;
-
-
 
 --
 -- Try It Yourself Exercises:
