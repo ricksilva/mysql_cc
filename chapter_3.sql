@@ -139,6 +139,9 @@ where  unemployed is not null;
 -- Try It Yourself Exercises:
 --
 
+-- If you didn't already create the feedback database in chapter 2, let's create it here
+create database if not exists feedback;
+
 -- Make sure the customer table is loaded for the Try It Yourself exercises:
 use feedback;
 
@@ -154,7 +157,7 @@ create table customer
     primary key (customer_id)
 ); 
 
--- Load the customer table with data:
+-- Unless you already did this in chapter 2, load the customer table with data.
 insert into customer (customer_id, first_name, last_name, address)
 values
 (1, 'Bob', 'Smith', '12 Dreary Lane'),
@@ -162,8 +165,6 @@ values
 (3, 'Karen', 'Bellyacher', '354 Main Street');
 
 -- Exercise 3-1: Select first and last name from the customer table
-use feedback;
-
 select	first_name,
 		last_name
 from	customer;

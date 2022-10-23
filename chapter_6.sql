@@ -403,8 +403,30 @@ insert into tourist_attraction (attraction_id, attraction_name, attraction_city_
 insert into tourist_attraction (attraction_id, attraction_name, attraction_city_id, open_flag) values (12,'Royal BC Museum', 6, true);
 insert into tourist_attraction (attraction_id, attraction_name, attraction_city_id, open_flag) values (13,'Sunnyside Amusement Park', 1, false);
 
+-- Creating the database for Exercise 6-1 below
+create database nutrition;
 
--- Exercise 6-1: An inner join with three tables
+use nutrition;
+
+create table good_snack
+	(
+    snack_name varchar(100)
+    );
+    
+create table bad_snack
+	(
+    snack_name varchar(100)
+    );
+	
+insert into good_snack (snack_name) values ('carrots');
+insert into good_snack (snack_name) values ('salad');
+insert into good_snack (snack_name) values ('soup');
+
+insert into bad_snack (snack_name) values ('sausage pizza');
+insert into bad_snack (snack_name) values ('BBQ ribs');
+insert into bad_snack (snack_name) values ('nachos');
+
+-- Exercise 6-2: An inner join with three tables
 select a.attraction_name,
        c.city_name,
        p.province_name
@@ -416,7 +438,7 @@ join   province p
   on   p.province_id = c.province_id
  and   p.official_language = 'French';
  
--- Exercise 6-2: Creating a temporary table
+-- Exercise 6-3: Creating a temporary table
 create temporary table open_tourist_attraction 
 as
  select   attraction_city_id,
@@ -424,7 +446,7 @@ as
  from     tourist_attraction
  where    open_flag is true;
 
--- Exercise 6-3: Joining a temporary table with a permanent table
+-- Exercise 6-4: Joining a temporary table with a permanent table
 select    a.attraction_name,
           c.city_name
 from      open_tourist_attraction a
@@ -433,7 +455,7 @@ join      capital_city c
  and      c.city_name = 'Toronto';
  
 
--- Creating databases for Exercise 6-4 below
+-- Creating databases for Exercise 6-5 below
 create database attire;
 
 use attire;
@@ -469,29 +491,7 @@ where   employee_id in
         from     employee
         where    position_name = 'Pope'
 );
-		
--- Creating the database for Exercise 6-5 below
-create database nutrition;
-
-use nutrition;
-
-create table good_snack
-	(
-    snack_name varchar(100)
-    );
-    
-create table bad_snack
-	(
-    snack_name varchar(100)
-    );
 	
-insert into good_snack (snack_name) values ('carrots');
-insert into good_snack (snack_name) values ('salad');
-insert into good_snack (snack_name) values ('soup');
-
-insert into bad_snack (snack_name) values ('sausage pizza');
-insert into bad_snack (snack_name) values ('BBQ ribs');
-insert into bad_snack (snack_name) values ('nachos');
 
 -- Exercise 6-5: To fix the query, change "where employee_id =" to "where employee_id in"
 select snack_name from good_snack 
