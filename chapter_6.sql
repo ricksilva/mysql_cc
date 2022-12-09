@@ -206,15 +206,15 @@ select * from winery_portfolio_cte;
 -- wot is a derived table
 select wot.winery_name,
        t.wine_type_name
-from   portfolio p,
-       wine_type t,
-       (
+from   portfolio p
+join   wine_type t
+on     p.wine_type_id = t.wine_type_id
+join   (
            select  *
            from    winery
            where   offering_tours_flag is true
        ) wot
-where  p.winery_id = wot.winery_id
-and    p.wine_type_id = t.wine_type_id;
+on     p.winery_id = wot.winery_id;
 
 -- Subquery
 select region_name
