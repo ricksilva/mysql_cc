@@ -175,7 +175,8 @@ begin
     select state,
            sum(population)
     from   county_population
-    where  state = state_param;
+    where  state = state_param
+    group by state;
     
 end//
 
