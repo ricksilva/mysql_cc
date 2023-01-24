@@ -1,6 +1,10 @@
 ## MySQL Crash Course
 
-**MySQL Crash Course** by Rick Silva is a course in using MySQL for beginner and intermediate database developers. The book introduces you to the basics of MySQL development. MySQL development techniques are explained with an emphasis on using Structured Query Language (SQL). Learn to use and create MySQL databases, tables, functions, procedures, views, and triggers.
+**MySQL Crash Course** by Rick Silva is a course in using MySQL for beginner and intermediate database developers. 
+
+![https://nostarch.com/mysql-crash-course](/images/mysql_cc.jpg "MySQL Crash Course")
+
+The book is available at [No Starch Press](https://nostarch.com/mysql-crash-course) and in bookstores everywhere. The book introduces you to the basics of MySQL development. MySQL development techniques are explained with an emphasis on using Structured Query Language (SQL). Learn to use and create MySQL databases, tables, functions, procedures, views, and triggers.
 
 Introduction
 
@@ -52,7 +56,3 @@ Copy and paste the commands you are interested in from the script and run them a
 **Happy MySQLing!**
 
 Rick Silva
-
-Email: rick@rick-silva.com
-
-Twitter: @rick_silva
